@@ -1,6 +1,8 @@
-package LinkedList;
+package TAssignment2;
 
-public class LinkedList {
+import LinkedList.Node;
+
+public class LinkedQueue {
 
     //Singly Linked List
     public Node head;
@@ -18,15 +20,6 @@ public class LinkedList {
         }
     }
 
-    public void insertAtStart(int data) {
-        Node newNode = new Node(data);
-        if(head==null) {
-            head = newNode;
-            return;
-        }
-        newNode.next = head;
-        head = newNode;
-    }
 
     public void insertAtEnd(int data) {
         Node newNode = new Node(data);
@@ -56,34 +49,19 @@ public class LinkedList {
         System.out.println("Not Found");
     }
 
-    public void deleteAtStart(){
-        if(head==null){
-            System.out.println("List is Empty");
-            return;
+    public int deleteAtStart(){
+        int temp = -1;
+        if(head==null) {
+            return temp;
+        } else {
+            temp = head.data;
         }
         if (head.next!=null){
             head = head.next;
         }
+        return temp;
     }
 
-    public void deleteAtEnd(){
-        if(head==null){
-            System.out.println("List is Empty");
-            return;
-        }
-        if(head.next==null){
-            head=null;
-            return;
-        }
-        Node secondLastNode = head;
-        Node lastNode = head.next;
-
-        while(lastNode.next!=null){
-            lastNode = lastNode.next;
-            secondLastNode = secondLastNode.next;
-        }
-        secondLastNode.next=null;
-    }
 
     public void replace(int i, int value){
         if(head==null){
@@ -109,16 +87,20 @@ public class LinkedList {
         }
 
         for (int i= 0;i<index;i++) {
-        Node currentNode = head;
+            Node currentNode = head;
 
-        int temp = currentNode.data;
+            int temp = currentNode.data;
 
-        while (currentNode.next != null) {
-            currentNode.data = currentNode.next.data;
-            currentNode = currentNode.next;
+            while (currentNode.next != null) {
+                currentNode.data = currentNode.next.data;
+                currentNode = currentNode.next;
+            }
+            currentNode.data = temp;
         }
-        currentNode.data = temp;
-    }
+
+
+
+
     }
 
 }
