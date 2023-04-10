@@ -8,12 +8,12 @@ public class Main {
         linkedQueue.insertAtEnd(5);
         linkedQueue.insertAtEnd(7);
         linkedQueue.insertAtEnd(2);
+        linkedQueue.insertAtEnd(9);
 
-        System.out.println(linkedQueue.deleteAtStart());
-        System.out.println(linkedQueue.deleteAtStart());
-        System.out.println(linkedQueue.deleteAtStart());
-        System.out.println(linkedQueue.deleteAtStart());
-        System.out.println(linkedQueue.deleteAtStart());
+//        linkedQueue.print();
+        System.out.println(linkedQueue.size);
+//        linkedQueue.rotate(1);
+//        linkedQueue.print();
 
 
 

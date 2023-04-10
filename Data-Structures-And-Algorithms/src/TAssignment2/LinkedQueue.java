@@ -58,6 +58,7 @@ public class LinkedQueue {
         }
         if (head.next!=null){
             head = head.next;
+            size--;
         }
         return temp;
     }
